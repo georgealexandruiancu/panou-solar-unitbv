@@ -1,10 +1,13 @@
+#include <Motor.h>
+
+
 // !!!!!!!!!!!!!!!!
 // CONNECT red to +5V
 // CONTECT black to GND
 // !!!!!!!!!!!!!!!!
 
 // Arduino stepper motor control code
-#include <Stepper.h>
+//#include <D:\Proiect Panou Solar\PanouSolar\libraries\Motor\Motor.h>
 
 // Change this to the number of steps on your motor
 #define STEPS 32
@@ -18,9 +21,9 @@ const int AnalogResistorTwo = A2; // Photoresistor at Arduino analog pin A2 (gre
 // pin 9 - orange wire - to IN2
 // pin 10 - white wire - to IN3
 // pin 11 - purple wire - to IN4
-Stepper stepper(STEPS, 8, 10, 9, 11); // Define stepper and pins for connection
+Motor stepper(STEPS, 8, 10, 9, 11); // Define stepper and pins for connection
 
-const int stepperRatio = 100; // diff from left to right
+const int stepperRatio = 150; // diff from left to right
 // -----------------------------------------
 
 // Variables
@@ -35,12 +38,12 @@ void setup(){
 
  Serial.begin(9600); // Little trick to write messages in console.
  stepper.setSpeed(200); // Set speed for stepper
-}
+ }
 
 // Returns true if x is in range [low..high], else false
-bool inRange(unsigned low, unsigned high, unsigned x)
+int inRange(unsigned low, unsigned high, unsigned x)
 {
-		return  ((x-low) <= (high-low));
+     return  ((x-low) <= (high-low));
 }
 
 void loop(){
