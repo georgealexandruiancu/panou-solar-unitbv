@@ -13,10 +13,10 @@ pin 8 - yellow wire - to IN1
 pin 9 - orange wire - to IN2
 pin 10 - white wire - to IN3
 pin 11 - purple wire - to IN4
-##### Stepper stepper(STEPS, 8, 10, 9, 11);
+##### Motor motor(STEPS, 8, 10, 9, 11);
 
 # PLEASE INCLUDE IN HEAD
-#include <Stepper.h> 
+#include <Motor.h> 
 
 
 # IMAGES
