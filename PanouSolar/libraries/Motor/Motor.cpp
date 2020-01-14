@@ -3,7 +3,6 @@
 
 /*
  *   constructor for four-pin version
- *   Sets which wires should control the motor.
  */
 Motor::Motor(int numberOfSteps, int motorPin_1, int motorPin_2, int motorPin_3, int motorPin_4) {
 	this->StepNumber = 0;						// which step the motor is on
@@ -32,6 +31,7 @@ Motor::Motor(int numberOfSteps, int motorPin_1, int motorPin_2, int motorPin_3, 
  */
 void Motor::setSpeed(long whatSpeed)
 {
+	// using L - declare long values
 	this->stepDelay = 60L * 1000L * 1000L / this->numberOfSteps / whatSpeed;
 }
 
