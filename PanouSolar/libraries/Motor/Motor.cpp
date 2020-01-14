@@ -123,5 +123,5 @@ void Motor::stepMotor(int thisStep)
 */
 int Motor::version(void)
 {
-	return 5;
+	return 1;
 }
